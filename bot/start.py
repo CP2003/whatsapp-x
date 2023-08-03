@@ -6,6 +6,7 @@ from telegram import Update
 
 BOT_USERNAME = os.environ.get('BOT_USERNAME')
 ADMIN_USER_ID = os.environ.get('ADMIN_USER_ID')
+DATABASE_URL = os.environ.get('DATABASE_URL')
 
 interacted_users = set()
 
