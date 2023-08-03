@@ -9,6 +9,6 @@ A telegram bot to get whatsapp mod apks
     2. Copy bot token and user name.
     3. [FORK](https://github.com/CP2003/whatsapp-x/fork) this repo
     6. Now DEPLOY
- <a href="https://www.heroku.com/deploy/?template=https://github.com/CP2003/whatsapp-x">
+ <a href="https://www.heroku.com/deploy/?template=https://github.com/CP2003/whatsapp-x-beta">
        <img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy">
 </a>
