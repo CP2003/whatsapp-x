@@ -6,6 +6,7 @@ from telegram.ext import Application, CommandHandler, MessageHandler, CallbackQu
 import telegram.error ,asyncio, time
 import heroku3
 
+from bot.start import start_command
 
 
 
