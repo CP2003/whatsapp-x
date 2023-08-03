@@ -11,7 +11,7 @@ from bot.start import start_command
 
 
 
-print('Starting up bot....')
+print('Starting up bot...')
 interacted_users = set()
 TOKEN = os.environ.get('TOKEN')
 BOT_USERNAME = os.environ.get('BOT_USERNAME')
