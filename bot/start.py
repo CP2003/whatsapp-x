@@ -2,6 +2,8 @@ import os
 from telegram import Update
 from telegram.ext import CommandHandler
 
+ADMIN_USER_ID = os.environ.get('ADMIN_USER_ID')
+
 async def start_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     user_id = str(update.message.from_user.id)
     command = context.args[0] if context.args else ''
