@@ -7,6 +7,22 @@ BOT_USERNAME = os.environ.get('BOT_USERNAME')
 ADMIN_USER_ID = os.environ.get('ADMIN_USER_ID')
 
 interacted_users = set()
+
+
+conn = psycopg2.connect(DATABASE_URL, sslmode='require')
+if os.path.exists('interacted_users.json'):
+    try:
+        with open('interacted_users.json', 'r') as file:
+            interacted_users = set(json.load(file))
+    except (IOError, json.JSONDecodeError):
+        print("Table interacted_users creating...")
+        interacted_users = set()
+else:
+    # Create the file if it does not exist
+    with open('interacted_users.json', 'w') as file:
+        json.dump(list(interacted_users), file)
+
+
 async def start_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     user_id = str(update.message.from_user.id)
     command = context.args[0] if context.args else ''
