@@ -1,0 +1,47 @@
+{"name": "Whatsapp-X",
+    "description": "Telegram file store bott",
+    "logo": "",
+    "keywords": ["telegram"],
+    "repository": "https://github.com/CP2003/whatsapp-x",
+    "stack": "container",
+    "env": {
+        "TOKEN": {
+			"description": "Enter Your token. if doesn't have get it from father bot",
+			"required": true,
+			"value": ""
+		},
+		"BOT_USERNAME": {
+			"description": "Enter you bot Username",
+			"required": true,
+			"value": "my_tele_001_bot"
+		},
+		"ADMIN_USER_ID": {
+			"description": "Enter your telegram ID",
+			"required": true,
+			"value": "5040666523"
+		},
+		"whatsapp_link": {
+			"description": "whatsapp link",
+			"required": true,
+			"value": "https://t.me/fouad_whatsapp_updates/46?single"
+		},
+		"fmwhatsapp_link": {
+			"description": "FM whatsapp link",
+			"required": true,
+			"value": "https://t.me/fouad_whatsapp_updates/47?single"
+		},
+		"gbwhatsapp_link": {
+			"description": "GB whatsapp link",
+			"required": true,
+			"value": "https://t.me/fouad_whatsapp_updates/48?single"
+		},
+		"yowhatsapp_link": {
+			"description": "Yo Whatsapp link",
+			"required": true,
+                        "value": "https://t.me/fouad_whatsapp_updates/49?single"
+		}
+    },
+    "addons": [{
+      "plan": "heroku-postgresql"
+    }]
+  }
