@@ -7,6 +7,7 @@ import telegram.error ,asyncio, time
 import heroku3
 
 from bot.start import start_command
+from bot.start import help_command
 
 
 
