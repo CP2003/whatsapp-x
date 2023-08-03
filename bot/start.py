@@ -34,11 +34,6 @@ async def start_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await asyncio.sleep(1)
         await send_sam_mod_options_inline(update)
 
-        
-    
-    
-    
-    
     else:
         keyboard = [
             [InlineKeyboardButton('Telegram Chanel', url="https://t.me/fouad_whatsapp_updates")],
