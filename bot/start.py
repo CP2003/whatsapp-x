@@ -3,7 +3,9 @@ from telegram.ext import ContextTypes, CommandHandler
 from telegram import Update
 
 
+BOT_USERNAME = os.environ.get('BOT_USERNAME')
 ADMIN_USER_ID = os.environ.get('ADMIN_USER_ID')
+
 interacted_users = set()
 async def start_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     user_id = str(update.message.from_user.id)
