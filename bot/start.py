@@ -4,7 +4,7 @@ from telegram import Update
 
 
 ADMIN_USER_ID = os.environ.get('ADMIN_USER_ID')
-
+interacted_users = set()
 async def start_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     user_id = str(update.message.from_user.id)
     command = context.args[0] if context.args else ''
