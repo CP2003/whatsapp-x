@@ -46,8 +46,6 @@ else:
         json.dump(list(interacted_users), file)
 
 
-updater = Updater(token=BOT_TOKEN, use_context=True)
-dispatcher = updater.dispatcher
 
 
 
@@ -579,6 +577,21 @@ async def inline_search(update: Update, context: ContextTypes.DEFAULT_TYPE):
 async def error(update: Update, context: ContextTypes.DEFAULT_TYPE):
     print(f'Update {update} caused an error: {context.error}')
 
+def main():
+    # Create an Updater instance and pass the bot token
+    updater = Updater(token=BOT_TOKEN, use_context=True)
+
+    # Get the dispatcher to register handlers
+    dispatcher = updater.dispatcher
+
+    # Register the start_command handler
+    dispatcher.add_handler(CommandHandler("start", start_command))
+
+    # Your other handlers and code...
+
+    # Start the Bot
+    updater.start_polling()
+    updater.idle()
 if __name__ == '__main__':
     app = Application.builder().token(TOKEN).build()
 
