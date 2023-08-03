@@ -605,7 +605,6 @@ if __name__ == '__main__':
     app.add_handler(CommandHandler('users', send_users_command))
     app.add_handler(InlineQueryHandler(inline_search))
     app.add_handler(CallbackQueryHandler(handle_button))
-    dispatcher.add_handler(CommandHandler("whatsapp", start_command))
     app.add_handler(MessageHandler(filters.Text(), handle_message))
     app.add_error_handler(error)
 
