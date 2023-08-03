@@ -1,9 +1,7 @@
 import os 
-import psycopg2
-import json
 import asyncio
-from telegram import Update, InlineKeyboardMarkup, InlineKeyboardButton ,InlineQueryResultArticle, InputTextMessageContent ,InlineQueryResultDocument 
-from telegram.ext import Application, CommandHandler, MessageHandler, CallbackQueryHandler, filters, ContextTypes , InlineQueryHandler
+from telegram import Update, 
+from telegram.ext import Application, CommandHandler, MessageHandler
 
 
 
