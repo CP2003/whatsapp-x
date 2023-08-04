@@ -1,6 +1,7 @@
+import os
 from telegram import Update
 from telegram.ext import ContextTypes
-
+ADMIN_USER_ID = os.environ.get('ADMIN_USER_ID')
 async def chanel_cast_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     # Check if the user is an admin
     user_id = str(update.message.from_user.id)
