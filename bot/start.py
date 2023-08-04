@@ -24,7 +24,7 @@ async def start_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
             [InlineKeyboardButton('Whatsapp Group', url="https://chat.whatsapp.com/HyBbE8HNwg6CblSfwuyqYR")]
         ]
         reply_markup = InlineKeyboardMarkup(keyboard)
-        await update.message.reply_text('📥 Hi dear , Welcome', reply_markup=reply_markup)
+            await update.message.reply_text('📥 Hi dear , Welcome', reply_markup=reply_markup)
 
         # Notify the admin about the new user
         if user_id != ADMIN_USER_ID:
