@@ -25,7 +25,7 @@ async def count_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     print(f"Interacted users set:", {user_count})
 
 # After initializing the set
-    interacted_users = set()
+    #interacted_users = set()
     print(f"interacted_users after initialization:", {user_count})
 
 # After adding user_id to the set
