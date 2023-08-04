@@ -10,6 +10,7 @@ DATABASE_URL = os.environ.get('DATABASE_URL')
 ADMIN_USER_ID = os.environ.get('ADMIN_USER_ID')
 
 async def count_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    print("Interacted users set:", interacted_users)
     # Check if the user is an admin
     user_id = str(update.message.from_user.id)
     if user_id != ADMIN_USER_ID:
