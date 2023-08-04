@@ -123,6 +123,7 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     if user_id == ADMIN_USER_ID:
         user_id = "Admin"
+        username = "@Admin"
 
     print(f' {username} in {message_type}: "{text}"')
 
