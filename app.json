@@ -21,44 +21,36 @@
 			"value": "5040666523"
 		},
 		"fmmods_whatsapp_link": {
-			"description": "fmmods whatsapp link",
 			"required": true,
 			"value": "https://t.me/file_store_4_mod_WA/2"
 		},
 	        "fmmods_fmwhatsapp_link": {
-			"description": "fmmods whatsapp link",
 			"required": true,
 			"value": "https://t.me/file_store_4_mod_WA/3"
 		},
 	        "fmmods_gbwhatsapp_link": {
-			"description": "fmmods whatsapp link",
 			"required": true,
 			"value": "https://t.me/file_store_4_mod_WA/4"
 		},
 	        "fmmods_yowhatsapp_link": {
-			"description": "fmmods whatsapp link",
 			"required": true,
 			"value": "https://t.me/file_store_4_mod_WA/5"
 		},
 
 
 	        "sammods_whatsapp_link": {
-			"description": "fmmods whatsapp link",
 			"required": true,
 			"value": " https://t.me/file_store_4_mod_WA/14"
 		},
 	        "sammods_gbwhatsapp_link": {
-			"description": "fmmods whatsapp link",
 			"required": true,
 			"value": "https://t.me/file_store_4_mod_WA/15"
 		},
 	        "sammods_gbwhatsapp2_link": {
-			"description": "fmmods whatsapp link",
 			"required": true,
 			"value": "https://t.me/file_store_4_mod_WA/16"
 		},
 	        "sammods_gbwhatsapp3_link": {
-			"description": "fmmods whatsapp link",
 			"required": true,
 			"value": "https://t.me/file_store_4_mod_WA/17"
 		}
