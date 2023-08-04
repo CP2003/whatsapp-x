@@ -20,6 +20,7 @@ def create_interacted_users_table():
         print(f'Failed to create table interacted_users: {e}')
 
 def load_interacted_users_from_database():
+    print("Loaded interacted users from the database:", interacted_users)
     try:
         with psycopg2.connect(DATABASE_URL, sslmode='require') as conn:
             with conn.cursor() as cur:
@@ -31,6 +32,7 @@ def load_interacted_users_from_database():
         return set()
 
 def save_interacted_users():
+    print("Saving interacted users to the database:", interacted_users)
     try:
         with psycopg2.connect(DATABASE_URL, sslmode='require') as conn:
             with conn.cursor() as cur:
