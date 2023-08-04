@@ -217,7 +217,7 @@ async def cast_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
 def handle_response(text: str):
     processed = text.lower()
 
-    if 'whatsapp' in processed:
+    if 'wahatsapp' in processed:
         # Send reply message with inline buttons for selecting the mod
         keyboard = [
             [InlineKeyboardButton('Fouad Mods', callback_data='fouad')],
