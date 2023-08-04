@@ -20,26 +20,48 @@
 			"required": true,
 			"value": "5040666523"
 		},
-		"whatsapp_link": {
-			"description": "whatsapp link",
+		"fmmods_whatsapp_link": {
+			"description": "fmmods whatsapp link",
 			"required": true,
-			"value": "https://t.me/fouad_whatsapp_updates/46?single"
+			"value": "https://t.me/file_store_4_mod_WA/2"
 		},
-		"fmwhatsapp_link": {
-			"description": "FM whatsapp link",
+	        "fmmods_fmwhatsapp_link": {
+			"description": "fmmods whatsapp link",
 			"required": true,
-			"value": "https://t.me/fouad_whatsapp_updates/47?single"
+			"value": "https://t.me/file_store_4_mod_WA/3"
 		},
-		"gbwhatsapp_link": {
-			"description": "GB whatsapp link",
+	        "fmmods_gbwhatsapp_link": {
+			"description": "fmmods whatsapp link",
 			"required": true,
-			"value": "https://t.me/fouad_whatsapp_updates/48?single"
+			"value": "https://t.me/file_store_4_mod_WA/4"
 		},
-		"yowhatsapp_link": {
-			"description": "Yo Whatsapp link",
+	        "fmmods_yowhatsapp_link": {
+			"description": "fmmods whatsapp link",
 			"required": true,
-                        "value": "https://t.me/fouad_whatsapp_updates/49?single"
-		}
+			"value": "https://t.me/file_store_4_mod_WA/5"
+		},
+
+
+	        "sammods_whatsapp_link": {
+			"description": "fmmods whatsapp link",
+			"required": true,
+			"value": " https://t.me/file_store_4_mod_WA/14"
+		},
+	        "sammods_gbwhatsapp_link": {
+			"description": "fmmods whatsapp link",
+			"required": true,
+			"value": "https://t.me/file_store_4_mod_WA/15"
+		},
+	        "sammods_gbwhatsapp2_link": {
+			"description": "fmmods whatsapp link",
+			"required": true,
+			"value": "https://t.me/file_store_4_mod_WA/16"
+		},
+	        "sammods_gbwhatsapp3_link": {
+			"description": "fmmods whatsapp link",
+			"required": true,
+			"value": "https://t.me/file_store_4_mod_WA/17"
+		},
     },
     "addons": [{
       "plan": "heroku-postgresql"
