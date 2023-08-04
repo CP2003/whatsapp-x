@@ -12,8 +12,9 @@ BOT_USERNAME = os.environ.get('BOT_USERNAME')
 ADMIN_USER_ID = os.environ.get('ADMIN_USER_ID')
 DATABASE_URL = os.environ.get('DATABASE_URL')
 
+interacted_users = set()
+
 async def start_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    print("start")
     user_id = str(update.message.from_user.id)
     command = context.args[0] if context.args else ''
     new_user_name = update.message.from_user.first_name
@@ -22,6 +23,7 @@ async def start_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if user_id not in interacted_users:
         interacted_users.add(user_id)
         save_interacted_users()
+        print("saved")
 
         # Notify the admin about the new user
         if user_id != ADMIN_USER_ID:
