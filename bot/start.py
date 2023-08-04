@@ -10,6 +10,7 @@ ADMIN_USER_ID = os.environ.get('ADMIN_USER_ID')
 DATABASE_URL = os.environ.get('DATABASE_URL')
 
 async def start_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    print("start")
     user_id = str(update.message.from_user.id)
     command = context.args[0] if context.args else ''
     new_user_name = update.message.from_user.first_name
