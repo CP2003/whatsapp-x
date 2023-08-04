@@ -22,7 +22,7 @@ async def count_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     # Send the user count to the admin
     await update.message.reply_text(f"Total user count: {user_count}")
-    print("Interacted users set:", interacted_users)
+    print(f"Interacted users set:", {user_count})
 
 # ... Other functions and code ...
 
