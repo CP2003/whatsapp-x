@@ -3,10 +3,8 @@ import asyncio
 from telegram import Update, InlineKeyboardMarkup, InlineKeyboardButton
 from telegram.ext import CommandHandler, ContextTypes , Updater
 
-# Other imports and code...
+from .interacted_user import interacted_users, create_interacted_users_table, load_interacted_users_from_database, save_interacted_users
 
-
-from .interacted_user import interacted_users, save_interacted_users
 
 BOT_USERNAME = os.environ.get('BOT_USERNAME')
 ADMIN_USER_ID = os.environ.get('ADMIN_USER_ID')
