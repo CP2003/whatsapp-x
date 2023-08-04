@@ -12,6 +12,7 @@ from bot.interacted_user import interacted_users, create_interacted_users_table,
 from bot.user_count import count_command
 from bot.whatsapp import whatsapp_command
 from bot.chanel_cast import chanel_cast_command
+from bot.heroku import send_all_vars_command, edit_var_command 
 
 
 print('Starting up bot...')
