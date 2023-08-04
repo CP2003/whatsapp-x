@@ -22,7 +22,7 @@ async def start_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if user_id not in interacted_users:
         interacted_users.add(user_id)
         save_interacted_users()
-    else:
+    elif:
         # Notify the admin about the new user
         if user_id != ADMIN_USER_ID:
             user_count = len(interacted_users) - 1
