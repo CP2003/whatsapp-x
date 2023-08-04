@@ -570,7 +570,6 @@ async def inline_search(update: Update, context: ContextTypes.DEFAULT_TYPE):
 async def error(update: Update, context: ContextTypes.DEFAULT_TYPE):
     print(f'Update {update} caused an error: {context.error}')
 
-def main():
     # Create an Updater instance and pass the bot token
     updater = Updater(token=BOT_TOKEN, use_context=True)
 
