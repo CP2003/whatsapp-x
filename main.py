@@ -495,4 +495,4 @@ if __name__ == '__main__':
     finally:
 
         save_interacted_users()
-        conn.close()
+  
