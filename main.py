@@ -570,24 +570,10 @@ def error(update, context):
     print(f'Update {update} caused an error: {context.error}')
     # You can handle errors here if needed
 
-
-bot = Bot(token=TOKEN)
-
-# Create the Updater instance
-updater = Updater(bot=bot, use_context=True)
-
-# Get the dispatcher to register handlers
-dispatcher = updater.dispatcher
-
-# Register the start_command handler
-dispatcher.add_handler(CommandHandler("start", start_command))
-
-# Your other handlers and code...
-
-# Start the Bot
-updater.start_polling()
-updater.idle()
 if __name__ == '__main__':
+    updater = Updater(token=BOT_TOKEN, use_context=True)
+    dispatcher = updater.dispatcher
+    dispatcher.add_handler(CommandHandler("start", start_command))
     app = Application.builder().token(TOKEN).build()
 
     app.add_handler(CommandHandler('cast', cast_command))
@@ -600,6 +586,7 @@ if __name__ == '__main__':
     app.add_handler(CallbackQueryHandler(handle_button))
     app.add_handler(MessageHandler(filters.Text(), handle_message))
     app.add_error_handler(error)
+    dispatcher.add_error_handler(error)
 
     print('Polling...')
 
