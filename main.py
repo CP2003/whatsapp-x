@@ -571,10 +571,11 @@ def error(update, context):
     # You can handle errors here if needed
 
 if __name__ == '__main__':
+    # Create the Bot instance
     bot = Bot(token=TOKEN)
 
     # Create the Updater with the Bot instance
-    updater = Updater(bot=bot, use_context=True)
+    updater = Updater(bot=bot)
 
     # Get the dispatcher to register handlers
     dispatcher = updater.dispatcher
