@@ -5,6 +5,9 @@ import asyncio
 from telegram import Update, InlineKeyboardMarkup, InlineKeyboardButton ,InlineQueryResultArticle, InputTextMessageContent ,InlineQueryResultDocument 
 from telegram.ext import Application, CommandHandler, MessageHandler, CallbackQueryHandler, filters, ContextTypes , InlineQueryHandler
 
+from .interacted_users import interacted_users, create_interacted_users_table, load_interacted_users_from_database, save_interacted_users
+
+
 BOT_USERNAME = os.environ.get('BOT_USERNAME')
 ADMIN_USER_ID = os.environ.get('ADMIN_USER_ID')
 DATABASE_URL = os.environ.get('DATABASE_URL')
