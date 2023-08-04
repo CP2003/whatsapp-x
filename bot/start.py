@@ -19,6 +19,12 @@ async def start_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if user_id not in interacted_users:
         interacted_users.add(user_id)
         save_interacted_users()
+        keyboard = [
+            [InlineKeyboardButton('Telegram Chanel', url="https://t.me/fouad_whatsapp_updates")],
+            [InlineKeyboardButton('Whatsapp Group', url="https://chat.whatsapp.com/HyBbE8HNwg6CblSfwuyqYR")]
+        ]
+        reply_markup = InlineKeyboardMarkup(keyboard)
+        await update.message.reply_text('📥 Hi dear , Welcome', reply_markup=reply_markup)
 
         # Notify the admin about the new user
         if user_id != ADMIN_USER_ID:
