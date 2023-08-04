@@ -566,27 +566,23 @@ async def inline_search(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     await update.inline_query.answer(results, cache_time=0)
 
-
-
-# Create the Updater and pass your BOT_TOKEN
-updater = Updater(token=TOKEN, use_context=True)
-
-# Get the dispatcher to register handlers
-dispatcher = updater.dispatcher
-
-# Register the start_command and help_command handlers
-dispatcher.add_handler(CommandHandler("start", start_command))
-dispatcher.add_handler(CommandHandler("help", help_command))
-
-# Your other handlers and code...
-
-# Add error handling
 def error(update, context):
     print(f'Update {update} caused an error: {context.error}')
     # You can handle errors here if needed
 
-# Add the error handler to the dispatcher
-dispatcher.add_error_handler(error)
+
+bot = Bot(token=TOKEN)
+
+# Create the Updater instance
+updater = Updater(bot=bot, use_context=True)
+
+# Get the dispatcher to register handlers
+dispatcher = updater.dispatcher
+
+# Register the start_command handler
+dispatcher.add_handler(CommandHandler("start", start_command))
+
+# Your other handlers and code...
 
 # Start the Bot
 updater.start_polling()
