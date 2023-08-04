@@ -570,30 +570,22 @@ def error(update, context):
     print(f'Update {update} caused an error: {context.error}')
     # You can handle errors here if needed
 
+
 if __name__ == '__main__':
-    # Create the Bot instance
-    bot = Bot(token=TOKEN)
+    app = Application.builder().token(TOKEN).build()
 
-    # Create the Updater with the Bot instance and a SimpleUpdateQueue (for older versions)
-    updater = Updater(bot=bot, update_queue=SimpleUpdateQueue())
-
-    # Get the dispatcher to register handlers
-    dispatcher = updater.dispatcher
-
-    # Register your CommandHandlers, MessageHandlers, and other handlers...
-    dispatcher.add_handler(CommandHandler("start", start_command))
-    dispatcher.add_handler(CommandHandler('cast', cast_command))
-    dispatcher.add_handler(CommandHandler('count', count_command))
-    dispatcher.add_handler(CommandHandler('edit', edit_var_command))
-    dispatcher.add_handler(CommandHandler('ccast', admin_cast_command))
-    dispatcher.add_handler(CommandHandler('allvar', send_all_vars_command))
-    dispatcher.add_handler(CommandHandler('users', send_users_command))
-    dispatcher.add_handler(InlineQueryHandler(inline_search))
-    dispatcher.add_handler(CallbackQueryHandler(handle_button))
-    dispatcher.add_handler(MessageHandler(filters.Text(), handle_message))
-
-    # Log errors
-    dispatcher.add_error_handler(error)
+    app.add_handler(CommandHandler('start', start_command))
+    app.add_handler(CommandHandler('help', help_command))
+    app.add_handler(CommandHandler('cast', cast_command))
+    app.add_handler(CommandHandler('count', count_command))
+    app.add_handler(CommandHandler('edit', edit_var_command))
+    app.add_handler(CommandHandler('ccast', admin_cast_command))
+    app.add_handler(CommandHandler('allvar', send_all_vars_command))
+    app.add_handler(CommandHandler('users', send_users_command))
+    app.add_handler(InlineQueryHandler(inline_search))
+    app.add_handler(CallbackQueryHandler(handle_button))
+    app.add_handler(MessageHandler(filters.Text(), handle_message))
+    app.add_error_handler(error)
 
     # Start the Bot
 
