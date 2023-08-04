@@ -574,8 +574,8 @@ if __name__ == '__main__':
     # Create the Bot instance
     bot = Bot(token=TOKEN)
 
-    # Create the Updater with the Bot instance
-    updater = Updater(bot=bot)
+    # Create the Updater with the Bot instance and a SimpleUpdateQueue (for older versions)
+    updater = Updater(bot=bot, update_queue=SimpleUpdateQueue())
 
     # Get the dispatcher to register handlers
     dispatcher = updater.dispatcher
