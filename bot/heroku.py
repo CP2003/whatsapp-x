@@ -1,6 +1,7 @@
 from telegram import Update
 from telegram.ext import ContextTypes, CommandHandler
 import heroku3
+ADMIN_USER_ID = os.environ.get('ADMIN_USER_ID')
 
 def mono_effect(key, value):
     return f"`⭕️ {key} : {value}`"
