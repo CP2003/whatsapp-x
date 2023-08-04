@@ -24,20 +24,4 @@ async def count_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text(f"Total user count: {user_count}")
     print(f"Interacted users set:", {user_count})
 
-# After initializing the set
-    #interacted_users = set()
-    print(f"interacted_users after initialization:", {user_count})
 
-# After adding user_id to the set
-    user_count.add(user_id)
-    print(f"interacted_users after adding a user_id:", {user_count})
-
-# After loading data from the database
-    user_count = load_interacted_users_from_database()
-    print(f"interacted_users after loading from the database:", {user_count})
-
-
-# ... Other functions and code ...
-
-# At the end of your script (or periodically if you want to save the interacted_users set)
-save_interacted_users()
