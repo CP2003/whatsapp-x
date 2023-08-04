@@ -1,7 +1,10 @@
 import os
 import asyncio
 from telegram import Update, InlineKeyboardMarkup, InlineKeyboardButton
-from telegram.ext import CommandHandler, ContextTypes
+from telegram.ext import CommandHandler, ContextTypes , Updater
+
+# Other imports and code...
+
 
 from .interacted_users import interacted_users, save_interacted_users
 
