@@ -569,7 +569,7 @@ async def inline_search(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 
 # Create the Updater and pass your BOT_TOKEN
-updater = Updater(token=BOT_TOKEN, use_context=True)
+updater = Updater(token=TOKEN, use_context=True)
 
 # Get the dispatcher to register handlers
 dispatcher = updater.dispatcher
