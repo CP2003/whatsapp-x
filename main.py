@@ -493,7 +493,6 @@ if __name__ == '__main__':
     try:
         app.run_polling(poll_interval=3)
     finally:
-        conn.close()
         save_interacted_users()
         
   
