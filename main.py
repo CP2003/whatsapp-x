@@ -571,7 +571,7 @@ def error(update, context):
     # You can handle errors here if needed
 
 if __name__ == '__main__':
-    updater = Updater(token=BOT_TOKEN, use_context=True)
+    updater = Updater(token=TOKEN, use_context=True)
     dispatcher = updater.dispatcher
     dispatcher.add_handler(CommandHandler("start", start_command))
     app = Application.builder().token(TOKEN).build()
