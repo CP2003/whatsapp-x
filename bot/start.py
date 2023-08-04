@@ -1,18 +1,13 @@
-import os 
-import psycopg2
-import json
+import os
 import asyncio
-from telegram import Update, InlineKeyboardMarkup, InlineKeyboardButton ,InlineQueryResultArticle, InputTextMessageContent ,InlineQueryResultDocument 
-from telegram.ext import Application, CommandHandler, MessageHandler, CallbackQueryHandler, filters, ContextTypes , InlineQueryHandler
+from telegram import Update, InlineKeyboardMarkup, InlineKeyboardButton
+from telegram.ext import CommandHandler, ContextTypes
 
-from .interacted_users import interacted_users, create_interacted_users_table, load_interacted_users_from_database, save_interacted_users
-
+from .interacted_users import interacted_users, save_interacted_users
 
 BOT_USERNAME = os.environ.get('BOT_USERNAME')
 ADMIN_USER_ID = os.environ.get('ADMIN_USER_ID')
 DATABASE_URL = os.environ.get('DATABASE_URL')
-
-interacted_users = set()
 
 async def start_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     user_id = str(update.message.from_user.id)
@@ -51,4 +46,3 @@ async def start_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
         ]
         reply_markup = InlineKeyboardMarkup(keyboard)
         await update.message.reply_text('📥 Hi dear , Welcome', reply_markup=reply_markup)
-
