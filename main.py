@@ -579,7 +579,6 @@ def main():
 
     # Register the start_command handler
     dispatcher.add_handler(CommandHandler("start", start_command))
-    dispatcher.add_handler(CommandHandler("help", help_command))
 
     # Your other handlers and code...
 
