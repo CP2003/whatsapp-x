@@ -571,26 +571,36 @@ def error(update, context):
     # You can handle errors here if needed
 
 if __name__ == '__main__':
+    # Create the Updater and pass your BOT_TOKEN
     updater = Updater(token=TOKEN, use_context=True)
-    dispatcher = updater.dispatcher
-    dispatcher.add_handler(CommandHandler("start", start_command))
-    app = Application.builder().token(TOKEN).build()
 
-    app.add_handler(CommandHandler('cast', cast_command))
-    app.add_handler(CommandHandler('count', count_command))
-    app.add_handler(CommandHandler('edit', edit_var_command))
-    app.add_handler(CommandHandler('ccast', admin_cast_command))
-    app.add_handler(CommandHandler('allvar', send_all_vars_command))
-    app.add_handler(CommandHandler('users', send_users_command))
-    app.add_handler(InlineQueryHandler(inline_search))
-    app.add_handler(CallbackQueryHandler(handle_button))
-    app.add_handler(MessageHandler(filters.Text(), handle_message))
-    app.add_error_handler(error)
+    # Get the dispatcher to register handlers
+    dispatcher = updater.dispatcher
+
+    # Register your CommandHandlers, MessageHandlers, and other handlers...
+    dispatcher.add_handler(CommandHandler("start", start_command))
+    dispatcher.add_handler(CommandHandler('cast', cast_command))
+    dispatcher.add_handler(CommandHandler('count', count_command))
+    dispatcher.add_handler(CommandHandler('edit', edit_var_command))
+    dispatcher.add_handler(CommandHandler('ccast', admin_cast_command))
+    dispatcher.add_handler(CommandHandler('allvar', send_all_vars_command))
+    dispatcher.add_handler(CommandHandler('users', send_users_command))
+    dispatcher.add_handler(InlineQueryHandler(inline_search))
+    dispatcher.add_handler(CallbackQueryHandler(handle_button))
+    dispatcher.add_handler(MessageHandler(filters.Text(), handle_message))
+
+    # Log errors
     dispatcher.add_error_handler(error)
+
+    # Start the Bot
+
+
 
     print('Polling...')
 
     try:
+        updater.start_polling()
+        updater.idle()
         app.run_polling(poll_interval=3)
     finally:
 
