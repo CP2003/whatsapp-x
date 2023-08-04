@@ -8,6 +8,7 @@ import heroku3
 
 from bot.start import start_command
 from bot.help import help_command
+from bot.interacted_users import interacted_users, create_interacted_users_table, load_interacted_users_from_database, save_interacted_users
 
 
 
