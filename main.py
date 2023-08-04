@@ -32,8 +32,7 @@ sammods_gbwhatsapp2_link = os.environ.get('sammods_gbwhatsapp2_link')
 sammods_gbwhatsapp3_link = os.environ.get('sammods_gbwhatsapp3_link')
 
 DATABASE_URL = os.environ.get('DATABASE_URL')
-HEROKU_API_KEY = os.environ.get('HEROKU_API_KEY')
-HEROKU_APP_NAME = os.environ.get('HEROKU_APP_NAME')
+
 
 
 
