@@ -1,5 +1,6 @@
 import os
 import json
+import psycopg2
 
 DATABASE_URL = os.environ.get('DATABASE_URL')
 interacted_users = set()
