@@ -34,22 +34,6 @@ HEROKU_API_KEY = os.environ.get('HEROKU_API_KEY')
 HEROKU_APP_NAME = os.environ.get('HEROKU_APP_NAME')
 
 
-conn = psycopg2.connect(DATABASE_URL, sslmode='require')
-if os.path.exists('interacted_users.json'):
-    try:
-        with open('interacted_users.json', 'r') as file:
-            interacted_users = set(json.load(file))
-    except (IOError, json.JSONDecodeError):
-        print("Table interacted_users creating...")
-        interacted_users = set()
-else:
-    # Create the file if it does not exist
-    with open('interacted_users.json', 'w') as file:
-        json.dump(list(interacted_users), file)
-
-
-
-
 
 async def admin_cast_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     # Check if the user is an admin
