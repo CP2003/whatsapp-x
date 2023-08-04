@@ -6,7 +6,6 @@ DATABASE_URL = os.environ.get('DATABASE_URL')
 interacted_users = set()
 
 
-
 def create_interacted_users_table():
     try:
         with psycopg2.connect(DATABASE_URL, sslmode='require') as conn:
@@ -23,7 +22,6 @@ def create_interacted_users_table():
         print(f'Failed to create table interacted_users: {e}')
 
 def load_interacted_users_from_database():
-    print("loading....")
     try:
         with psycopg2.connect(DATABASE_URL, sslmode='require') as conn:
             with conn.cursor() as cur:
@@ -34,8 +32,10 @@ def load_interacted_users_from_database():
         print(f'Error loading interacted_users from the database. Starting with an empty set. {e}')
         return set()
 
+create_interacted_users_table()
+interacted_users = load_interacted_users_from_database()
+
 def save_interacted_users():
-    
     try:
         with psycopg2.connect(DATABASE_URL, sslmode='require') as conn:
             with conn.cursor() as cur:
@@ -52,6 +52,6 @@ def save_interacted_users():
 
         print('Data successfully saved to the database.')
 
-
     except psycopg2.Error as e:
         print(f'Failed to save interacted_users data to the database: {e}')
+
