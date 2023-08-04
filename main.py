@@ -8,7 +8,7 @@ import heroku3
 
 from bot.start import start_command
 from bot.help import help_command
-from bot.interacted_users import interacted_users, create_interacted_users_table, load_interacted_users_from_database, save_interacted_users
+from bot.interacted_user import interacted_users, create_interacted_users_table, load_interacted_users_from_database, save_interacted_users
 from bot.user_count import count_command
 
 
@@ -495,4 +495,5 @@ if __name__ == '__main__':
     finally:
 
         save_interacted_users()
+        conn.close()
   
