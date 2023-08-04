@@ -61,7 +61,7 @@
 			"description": "fmmods whatsapp link",
 			"required": true,
 			"value": "https://t.me/file_store_4_mod_WA/17"
-		},
+		}
     },
     "addons": [{
       "plan": "heroku-postgresql"
