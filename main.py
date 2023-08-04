@@ -437,7 +437,7 @@ if __name__ == '__main__':
     app.add_handler(CommandHandler('cast', cast_command))
     app.add_handler(CommandHandler('count', count_command))
     app.add_handler(CommandHandler('edit', edit_var_command))
-    app.add_handler(CommandHandler('ccast', admin_cast_command))
+    app.add_handler(CommandHandler('ccast', chanel_cast_command))
     app.add_handler(CommandHandler('allvar', send_all_vars_command))
     app.add_handler(CommandHandler('users', send_users_command))
     app.add_handler(InlineQueryHandler(inline_search))
