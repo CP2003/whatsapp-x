@@ -15,8 +15,7 @@ from bot.chanel_cast import chanel_cast_command
 from bot.heroku import send_all_vars_command, edit_var_command 
 
 
-create_interacted_users_table()
-load_interacted_users_from_database()
+
 print('Starting up bot...')
 interacted_users = set()
 TOKEN = os.environ.get('TOKEN')
