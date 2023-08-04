@@ -1,4 +1,10 @@
-
+import os
+import psycopg2
+from .interacted_users import interacted_users, create_interacted_users_table, load_interacted_users_from_database, save_interacted_users
+# Assuming you have already initialized interacted_users set and other variables
+# interacted_users = set()
+# DATABASE_URL = os.environ.get('DATABASE_URL')
+# ADMIN_USER_ID = os.environ.get('ADMIN_USER_ID')
 
 async def count_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     # Check if the user is an admin
@@ -12,3 +18,8 @@ async def count_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     # Send the user count to the admin
     await update.message.reply_text(f"Total user count: {user_count}")
+
+# ... Other functions and code ...
+
+# At the end of your script (or periodically if you want to save the interacted_users set)
+save_interacted_users()
