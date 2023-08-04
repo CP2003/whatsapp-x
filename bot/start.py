@@ -6,7 +6,7 @@ from telegram.ext import CommandHandler, ContextTypes , Updater
 # Other imports and code...
 
 
-from .interacted_users import interacted_users, save_interacted_users
+from .interacted_user import interacted_users, save_interacted_users
 
 BOT_USERNAME = os.environ.get('BOT_USERNAME')
 ADMIN_USER_ID = os.environ.get('ADMIN_USER_ID')
