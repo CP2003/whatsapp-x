@@ -2,7 +2,7 @@ import os
 from telegram import Update
 from telegram.ext import ContextTypes
 import psycopg2
-from .interacted_users import interacted_users, create_interacted_users_table, load_interacted_users_from_database, save_interacted_users
+from .interacted_user import interacted_users, create_interacted_users_table, load_interacted_users_from_database, save_interacted_users
 
 # Assuming you have already initialized interacted_users set and other variables
 interacted_users = set()
