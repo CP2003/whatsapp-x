@@ -78,6 +78,7 @@ def save_interacted_users():
 
 async def start_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     user_id = str(update.message.from_user.id)
+    print(ADMIN_USER_ID)
     command = context.args[0] if context.args else ''
     new_user_name = update.message.from_user.first_name
 
