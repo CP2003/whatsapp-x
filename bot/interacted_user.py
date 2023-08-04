@@ -3,7 +3,8 @@ import json
 import psycopg2
 
 DATABASE_URL = os.environ.get('DATABASE_URL')
-interacted_users = set()
+interacted_users = load_interacted_users_from_database()
+
 
 
 def create_interacted_users_table():
