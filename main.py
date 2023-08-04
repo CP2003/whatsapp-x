@@ -14,7 +14,6 @@ from bot.user_count import count_command
 
 
 print('Starting up bot...')
-interacted_users = set()
 TOKEN = os.environ.get('TOKEN')
 BOT_USERNAME = os.environ.get('BOT_USERNAME')
 ADMIN_USER_ID = os.environ.get('ADMIN_USER_ID')
