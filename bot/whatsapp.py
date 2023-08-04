@@ -1,6 +1,8 @@
-from telegram import Update, InlineKeyboardMarkup, InlineKeyboardButton ,InlineQueryResultArticle, InputTextMessageContent ,InlineQueryResultDocument 
-from telegram.ext import  CommandHandler, MessageHandler, CallbackQueryHandler, ContextTypes , InlineQueryHandler
 
+from telegram import Update, InlineKeyboardMarkup, InlineKeyboardButton
+from telegram.ext import CommandHandler, ContextTypes
+
+# Define the whatsapp_command function to handle the /whatsapp command
 async def whatsapp_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     keyboard = [
         [InlineKeyboardButton('Fouad Mods', callback_data='fouad')],
