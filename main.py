@@ -10,6 +10,7 @@ from bot.start import start_command
 from bot.help import help_command
 from bot.interacted_user import interacted_users, create_interacted_users_table, load_interacted_users_from_database, save_interacted_users
 from bot.user_count import count_command
+from bot.whatsapp import whatsapp_command
 
 
 
