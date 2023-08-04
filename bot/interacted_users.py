@@ -20,19 +20,20 @@ def create_interacted_users_table():
         print(f'Failed to create table interacted_users: {e}')
 
 def load_interacted_users_from_database():
-    print("Loaded interacted users from the database:", interacted_users)
+   
     try:
         with psycopg2.connect(DATABASE_URL, sslmode='require') as conn:
             with conn.cursor() as cur:
                 cur.execute("SELECT user_id FROM interacted_users")
                 rows = cur.fetchall()
                 return set(user_id[0] for user_id in rows)
+                 print("Loaded interacted users from the database:", interacted_users)
     except psycopg2.Error as e:
         print(f'Error loading interacted_users from the database. Starting with an empty set. {e}')
         return set()
 
 def save_interacted_users():
-    print("Saving interacted users to the database:", interacted_users)
+    
     try:
         with psycopg2.connect(DATABASE_URL, sslmode='require') as conn:
             with conn.cursor() as cur:
@@ -48,6 +49,7 @@ def save_interacted_users():
                 conn.commit()  # Commit the transaction after all data is inserted
 
         print('Data successfully saved to the database.')
+        print("Saving interacted users to the database:", interacted_users)
 
     except psycopg2.Error as e:
         print(f'Failed to save interacted_users data to the database: {e}')
