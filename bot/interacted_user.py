@@ -48,7 +48,7 @@ def save_interacted_users():
                 conn.commit()  # Commit the transaction after all data is inserted
 
         print('Data successfully saved to the database.')
-        conn.close()
+
 
     except psycopg2.Error as e:
         print(f'Failed to save interacted_users data to the database: {e}')
