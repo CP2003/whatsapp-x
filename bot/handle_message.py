@@ -1,3 +1,10 @@
+import os
+from telegram import Update
+from telegram.ext import ContextTypes
+
+
+ADMIN_USER_ID = os.environ.get('ADMIN_USER_ID')
+
 async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
     message_type: str = update.message.chat.type
     text: str = update.message.text
