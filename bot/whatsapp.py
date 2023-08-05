@@ -3,6 +3,8 @@ from telegram import Update, InlineKeyboardMarkup, InlineKeyboardButton
 from telegram.ext import CommandHandler, ContextTypes
 import telegram.error ,asyncio, time
 
+ADMIN_USER_ID = os.environ.get('ADMIN_USER_ID')
+
 fmmods_whatsapp_link = os.environ.get('fmmods_whatsapp_link')
 fmmods_fmwhatsapp_link = os.environ.get('fmmods_fmwhatsapp_link')
 fmmods_gbwhatsapp_link = os.environ.get('fmmods_gbwhatsapp_link')
@@ -15,12 +17,28 @@ sammods_gbwhatsapp3_link = os.environ.get('sammods_gbwhatsapp3_link')
 
 # Define the whatsapp_command function to handle the /whatsapp command
 async def whatsapp_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    message_type: str = update.message.chat.type
+    user_id: str = str(update.message.chat.id)
+    username: str = update.message.from_user.username
+    first_name: str = update.message.from_user.first_name
+    last_name: str = update.message.from_user.last_name
+    user_id = str(update.message.from_user.id)
+    group_chat_id = -707701170
+    
+    if not username:
+        username = f"{first_name} {last_name}" if first_name and last_name else "Anonymous"
+    elif user_id == ADMIN_USER_ID:
+        username = "@Admin"
+    else:
+        username = f"@{username}"
+
     keyboard = [
         [InlineKeyboardButton('Fouad Mods', callback_data='fouad')],
         [InlineKeyboardButton('Sam Mods', callback_data='sam')]
     ]
     reply_markup = InlineKeyboardMarkup(keyboard)
     await update.message.reply_text('Select a WhatsApp mod:', reply_markup=reply_markup)
+    await context.bot.send_message(chat_id=group_chat_id, text=f'{username} in {message_type}: "/whatsapp"')
 
 
 
@@ -100,7 +118,7 @@ async def send_com_gbwhatsapp_file(query):
     await asyncio.sleep(3)
     await query.message.reply_document(document=sammods_gbwhatsapp_link)
     await asyncio.sleep(1)
-    await query.message.edit_text(text="Here is Your FM Whatsapp Apk file")
+    await query.message.edit_text(text="Here is Your GB Whatsapp Apk file")
 
 
 async def send_com_gbwhatsapp2_file(query):
@@ -109,7 +127,7 @@ async def send_com_gbwhatsapp2_file(query):
     await asyncio.sleep(3)
     await query.message.reply_document(document=sammods_gbwhatsapp2_link)
     await asyncio.sleep(1)
-    await query.message.edit_text(text="Here is Your GB Whatsapp Apk file")
+    await query.message.edit_text(text="Here is Your GB Whatsapp 2 Apk file")
 
 
 async def send_com_gbwhatsapp3_file(query):
@@ -118,7 +136,7 @@ async def send_com_gbwhatsapp3_file(query):
     await asyncio.sleep(3)
     await query.message.reply_document(document=sammods_gbwhatsapp3_link)
     await asyncio.sleep(1)
-    await query.message.edit_text(text="Here is Your YO Whatsapp Apk file")
+    await query.message.edit_text(text="Here is Your GB Whatsapp 3 Apk file")
 
 
 async def send_fouad_mod_options_inline(update: Update):
@@ -150,7 +168,6 @@ async def send_sam_mod_options_inline(update: Update):
 
     # Send the message to the user
     await update.message.reply_text('Download Sam Mod Whatsapp APK files:', reply_markup=reply_markup)
-
 
 
 
