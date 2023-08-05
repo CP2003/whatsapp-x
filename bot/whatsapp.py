@@ -1,5 +1,6 @@
 from telegram import Update, InlineKeyboardMarkup, InlineKeyboardButton
 from telegram.ext import CommandHandler, ContextTypes
+import telegram.error ,asyncio, time
 
 # Define the whatsapp_command function to handle the /whatsapp command
 async def whatsapp_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
