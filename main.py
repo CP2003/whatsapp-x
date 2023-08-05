@@ -22,16 +22,6 @@ TOKEN = os.environ.get('TOKEN')
 BOT_USERNAME = os.environ.get('BOT_USERNAME')
 ADMIN_USER_ID = os.environ.get('ADMIN_USER_ID')
 
-fmmods_whatsapp_link = os.environ.get('fmmods_whatsapp_link')
-fmmods_fmwhatsapp_link = os.environ.get('fmmods_fmwhatsapp_link')
-fmmods_gbwhatsapp_link = os.environ.get('fmmods_gbwhatsapp_link')
-fmmods_yowhatsapp_link = os.environ.get('fmmods_yowhatsapp_link')
-
-sammods_whatsapp_link = os.environ.get('sammods_whatsapp_link')
-sammods_gbwhatsapp_link = os.environ.get('sammods_gbwhatsapp_link')
-sammods_gbwhatsapp2_link = os.environ.get('sammods_gbwhatsapp2_link')
-sammods_gbwhatsapp3_link = os.environ.get('sammods_gbwhatsapp3_link')
-
 DATABASE_URL = os.environ.get('DATABASE_URL')
 
 
