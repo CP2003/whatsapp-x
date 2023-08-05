@@ -13,6 +13,7 @@ from bot.user_count import count_command
 from bot.whatsapp import whatsapp_command, send_fouad_mod_options, send_sam_mod_options, send_fmmods_whatsapp_file, send_fmmods_fm_whatsapp_file, send_fmmods_gb_whatsapp_file, send_fmmods_yo_whatsapp_file, send_com_whatsapp_file, send_com_gbwhatsapp_file, send_com_gbwhatsapp2_file, send_com_gbwhatsapp3_file, send_fouad_mod_options_inline, send_sam_mod_options_inline 
 from bot.chanel_cast import chanel_cast_command
 from bot.heroku import send_all_vars_command, edit_var_command 
+from bot.inlinesearch import inline_search
 
 
 
@@ -148,36 +149,7 @@ async def handle_button(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 
 
-async def inline_search(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    query = update.inline_query.query.lower()
-    results = []
 
-    try:
-        if 'whats' in query:
-            # First result: Fouad Mod Whatsapp
-            fouad_button = InlineKeyboardButton('Fouad Mod Whatsapp', url=f'https://t.me/{BOT_USERNAME}?start=send_fouad')
-            # Second result: Sam Mods Whatsapp
-            sam_button = InlineKeyboardButton('Sam Mods Whatsapp', url=f'https://t.me/{BOT_USERNAME}?start=send_sam')
-
-            reply_markup = InlineKeyboardMarkup([[fouad_button], [sam_button]])
-
-            # Add the results to the list
-            results.append(
-                InlineQueryResultArticle(
-                    id='1',
-                    title='Fouad Mod Whatsapp',
-                    input_message_content=InputTextMessageContent(
-                        message_text='Please select a WhatsApp mod:'
-                    ),
-                    description='Download Fouad Mod Whatsapp APK files',
-                    reply_markup=reply_markup
-                )
-            )
-
-    except telegram.error.BadRequest:
-        pass  # Ignore the "Query is too old" error
-
-    await update.inline_query.answer(results, cache_time=0)
 
 def error(update, context):
     print(f'Update {update} caused an error: {context.error}')
