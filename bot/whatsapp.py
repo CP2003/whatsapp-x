@@ -1,6 +1,6 @@
 
-from telegram import Update, InlineKeyboardMarkup, InlineKeyboardButton
-from telegram.ext import CommandHandler, ContextTypes
+from telegram import Bot , Update, InlineKeyboardMarkup, InlineKeyboardButton ,InlineQueryResultArticle, InputTextMessageContent ,InlineQueryResultDocument 
+from telegram.ext import Application, CommandHandler, MessageHandler, CallbackQueryHandler, filters, ContextTypes , InlineQueryHandler , Updater
 
 # Define the whatsapp_command function to handle the /whatsapp command
 async def whatsapp_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
