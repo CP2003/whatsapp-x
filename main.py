@@ -14,6 +14,7 @@ from bot.whatsapp import whatsapp_command, send_fouad_mod_options, send_sam_mod_
 from bot.chanel_cast import chanel_cast_command
 from bot.heroku import send_all_vars_command, edit_var_command 
 from bot.inlinesearch import inline_search
+from bot.handle_message import handle_message
 
 
 
