@@ -41,8 +41,7 @@ async def start_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     else:
         keyboard = [
-            [InlineKeyboardButton('Telegram Chanel', url="https://t.me/fouad_whatsapp_updates")],
-            [InlineKeyboardButton('Whatsapp Group', url="https://chat.whatsapp.com/HyBbE8HNwg6CblSfwuyqYR")]
+            [InlineKeyboardButton('Telegram Chanel', url="https://t.me/fouad_whatsapp_updates")]
         ]
         reply_markup = InlineKeyboardMarkup(keyboard)
         await update.message.reply_text('📥 Hi dear , Welcome', reply_markup=reply_markup)
