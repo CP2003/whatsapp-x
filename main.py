@@ -18,6 +18,7 @@ from bot.handle_message import handle_message
 
 
 
+
 print('Starting up bot...')
 interacted_users = set()
 TOKEN = os.environ.get('TOKEN')
