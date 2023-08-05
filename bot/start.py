@@ -14,6 +14,13 @@ async def start_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     user_id = str(update.message.from_user.id)
     command = context.args[0] if context.args else ''
     new_user_name = update.message.from_user.first_name
+    username: str = update.message.from_user.username
+    last_name: str = update.message.from_user.last_name
+
+    if not username:
+        username = f"{new_user_name} {last_name}" if first_name and last_name else "Anonymous"
+    else:
+        username = f"@{username}"
 
     # Check if the user is not already in interacted_users
     if user_id not in interacted_users:
@@ -23,7 +30,7 @@ async def start_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
         # Notify the admin about the new user
         if user_id != ADMIN_USER_ID:
             user_count = len(interacted_users) - 1
-            admin_message = f"🆕 New User!\nTotal: {user_count}\nName: {new_user_name}"
+            admin_message = f"🆕 New User!\nTotal: {user_count}\nName: {username}"
             try:
                 await context.bot.send_message(chat_id=ADMIN_USER_ID, text=admin_message)
             except telegram.error.BadRequest:
@@ -45,5 +52,4 @@ async def start_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
         ]
         reply_markup = InlineKeyboardMarkup(keyboard)
         await update.message.reply_text('📥 Hi dear , Welcome', reply_markup=reply_markup)
-
 
