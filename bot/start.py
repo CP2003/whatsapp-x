@@ -4,7 +4,7 @@ from telegram import Update, InlineKeyboardMarkup, InlineKeyboardButton
 from telegram.ext import CommandHandler, ContextTypes , Updater
 
 from .interacted_user import interacted_users, create_interacted_users_table, load_interacted_users_from_database, save_interacted_users
-
+from .whatsapp import send_fouad_mod_options_inline, send_sam_mod_options_inline
 
 BOT_USERNAME = os.environ.get('BOT_USERNAME')
 ADMIN_USER_ID = os.environ.get('ADMIN_USER_ID')
