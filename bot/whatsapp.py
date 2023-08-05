@@ -2,6 +2,16 @@ from telegram import Update, InlineKeyboardMarkup, InlineKeyboardButton
 from telegram.ext import CommandHandler, ContextTypes
 import telegram.error ,asyncio, time
 
+fmmods_whatsapp_link = os.environ.get('fmmods_whatsapp_link')
+fmmods_fmwhatsapp_link = os.environ.get('fmmods_fmwhatsapp_link')
+fmmods_gbwhatsapp_link = os.environ.get('fmmods_gbwhatsapp_link')
+fmmods_yowhatsapp_link = os.environ.get('fmmods_yowhatsapp_link')
+
+sammods_whatsapp_link = os.environ.get('sammods_whatsapp_link')
+sammods_gbwhatsapp_link = os.environ.get('sammods_gbwhatsapp_link')
+sammods_gbwhatsapp2_link = os.environ.get('sammods_gbwhatsapp2_link')
+sammods_gbwhatsapp3_link = os.environ.get('sammods_gbwhatsapp3_link')
+
 # Define the whatsapp_command function to handle the /whatsapp command
 async def whatsapp_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     keyboard = [
