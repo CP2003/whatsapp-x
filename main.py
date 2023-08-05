@@ -15,6 +15,7 @@ from bot.chanel_cast import chanel_cast_command
 from bot.heroku import send_all_vars_command, edit_var_command 
 from bot.inlinesearch import inline_search
 from bot.handle_message import handle_message
+from bot.handle_button import handle_button
 
 
 
@@ -24,7 +25,6 @@ interacted_users = set()
 TOKEN = os.environ.get('TOKEN')
 BOT_USERNAME = os.environ.get('BOT_USERNAME')
 ADMIN_USER_ID = os.environ.get('ADMIN_USER_ID')
-
 DATABASE_URL = os.environ.get('DATABASE_URL')
 
 
@@ -65,36 +65,6 @@ async def cast_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     user_count = successful_broadcasts
     await update.message.reply_text(f"Broadcast sent successfully to {user_count} users.")
 
-
-
-
-
-async def handle_button(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    query = update.callback_query
-    button = query.data
-
-    if button == 'fmmods_whatsapp':
-        await send_fmmods_whatsapp_file(query)
-    elif button == 'fmmods_fmwhatsapp':
-        await send_fmmods_fm_whatsapp_file(query)
-    elif button == 'fmmods_gbwhatsapp':
-        await send_fmmods_gb_whatsapp_file(query)
-    elif button == 'fmmods_yowhatsapp':
-        await send_fmmods_yo_whatsapp_file(query)
-        
-    if button == 'com_whatsapp':
-        await send_com_whatsapp_file(query)
-    elif button == 'com_gbwhatsapp':
-        await send_com_gbwhatsapp_file(query)
-    elif button == 'com_gbwhatsapp2':
-        await send_com_gbwhatsapp2_file(query)
-    elif button == 'com_gbwhatsapp3':
-        await send_com_gbwhatsapp3_file(query)
-    
-    elif button == 'fouad':
-        await send_fouad_mod_options(query)
-    elif button == 'sam':
-        await send_sam_mod_options(query)
 
 
 
