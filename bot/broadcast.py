@@ -1,6 +1,7 @@
 import os
 from telegram import Update
 from telegram.ext import ContextTypes
+import telegram.error
 
 from bot.interacted_user import interacted_users, create_interacted_users_table, load_interacted_users_from_database, save_interacted_users
 
