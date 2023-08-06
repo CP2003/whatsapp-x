@@ -9,7 +9,7 @@ from .whatsapp import send_fouad_mod_options_inline, send_sam_mod_options_inline
 BOT_USERNAME = os.environ.get('BOT_USERNAME')
 ADMIN_USER_ID = os.environ.get('ADMIN_USER_ID')
 DATABASE_URL = os.environ.get('DATABASE_URL')
-
+lock = asyncio.Lock()
 async def start_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     user_id = str(update.message.from_user.id)
     command = context.args[0] if context.args else ''
@@ -23,9 +23,10 @@ async def start_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
         username = f"@{username}"
 
     # Check if the user is not already in interacted_users
-    if user_id not in interacted_users:
-        interacted_users.add(user_id)
-        save_interacted_users()
+    with lock:
+        if user_id not in interacted_users:
+            interacted_users.add(user_id)
+            save_interacted_users()
 
         # Notify the admin about the new user
         if user_id != ADMIN_USER_ID:
