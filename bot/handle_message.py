@@ -4,6 +4,7 @@ from telegram.ext import ContextTypes
 from bot.handle_response import handle_response
 
 ADMIN_USER_ID = os.environ.get('ADMIN_USER_ID')
+BOT_USERNAME = os.environ.get('BOT_USERNAME')
 
 async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
     message_type: str = update.message.chat.type
