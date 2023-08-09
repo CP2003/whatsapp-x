@@ -13,7 +13,7 @@ from bot.user_count import count_command
 from bot.chanel_cast import chanel_cast_command
 from bot.whatsapp import whatsapp_command, send_fouad_mod_options, send_sam_mod_options, send_fmmods_whatsapp_file, send_fmmods_fm_whatsapp_file, send_fmmods_gb_whatsapp_file, send_fmmods_yo_whatsapp_file, send_com_whatsapp_file, send_com_gbwhatsapp_file, send_com_gbwhatsapp2_file, send_com_gbwhatsapp3_file, send_fouad_mod_options_inline, send_sam_mod_options_inline 
 from bot.heroku import send_all_vars_command, edit_var_command 
-from bot.inlinesearch import inline_search
+from bot.inline_search import inline_search
 from bot.handle_message import handle_message
 from bot.handle_button import handle_button
 from bot.broadcast import cast_command
