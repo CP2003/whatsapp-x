@@ -1,7 +1,7 @@
 import os
 from telegram import Bot , Update, InlineKeyboardMarkup, InlineKeyboardButton ,InlineQueryResultArticle, InputTextMessageContent ,InlineQueryResultDocument 
-from telegram.ext import Application, CommandHandler, MessageHandler, CallbackQueryHandler, filters, ContextTypes , InlineQueryHandler , Updater
-import telegram.error ,asyncio, time
+from telegram.ext import   ContextTypes 
+import telegram.error 
 BOT_USERNAME = os.environ.get('BOT_USERNAME')
 
 async def inline_search(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -9,7 +9,7 @@ async def inline_search(update: Update, context: ContextTypes.DEFAULT_TYPE):
     results = []
 
     try:
-        if 'whats' in query:
+        if 'w' in query:
             # First result: Fouad Mod Whatsapp
             fouad_button = InlineKeyboardButton('Fouad Mod Whatsapp', url=f'https://t.me/{BOT_USERNAME}?start=send_fouad')
             # Second result: Sam Mods Whatsapp
@@ -21,11 +21,12 @@ async def inline_search(update: Update, context: ContextTypes.DEFAULT_TYPE):
             results.append(
                 InlineQueryResultArticle(
                     id='1',
-                    title='Fouad Mod Whatsapp',
+                    title='Whatsapp Mod Apks',
                     input_message_content=InputTextMessageContent(
                         message_text='Please select a WhatsApp mod:'
                     ),
                     description='Download Fouad Mod Whatsapp APK files',
+                    thumb_url='https://i.ibb.co/YL52HVZ/photo-2023-08-05-06-37-35.jpg', 
                     reply_markup=reply_markup
                 )
             )
