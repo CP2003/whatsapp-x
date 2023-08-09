@@ -16,27 +16,25 @@ async def start_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     new_user_name = update.message.from_user.first_name
     username: str = update.message.from_user.username
     last_name: str = update.message.from_user.last_name
+    user_name = f"@{username}"
 
     if not username:
-        username = f"{new_user_name} {last_name}" if first_name and last_name else "Anonymous"
-    else:
-        username = f"@{username}"
-
-    # Check if the user is not already in interacted_users
+        user_name = f"{new_user_name} {last_name}" 
+    
     if user_id not in interacted_users:
+        print("wada")
         interacted_users.add(user_id)
         save_interacted_users()
 
-        # Notify the admin about the new user
         if user_id != ADMIN_USER_ID:
-            user_count = len(interacted_users) - 1
-            admin_message = f"🆕 New User!\nTotal: {user_count}\nName: {username}"
+            user_count = len(interacted_users) - 1   
+            admin_message = f"🆕 New User!\nTotal: {user_count}\nUser: {user_name}"
             try:
                 await context.bot.send_message(chat_id=ADMIN_USER_ID, text=admin_message)
             except telegram.error.BadRequest:
                 print(f"Failed to send message to admin {ADMIN_USER_ID}")
 
-    elif command == 'send_fouad':
+    if command == 'send_fouad':
         await context.bot.send_chat_action(chat_id=user_id, action='typing')
         await asyncio.sleep(1)
         await send_fouad_mod_options_inline(update)
@@ -51,5 +49,6 @@ async def start_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
             [InlineKeyboardButton('Telegram Chanel', url="https://t.me/fouad_whatsapp_updates")]
         ]
         reply_markup = InlineKeyboardMarkup(keyboard)
+        print(user_name)
+        print(f"{new_user_name} {last_name}")
         await update.message.reply_text('📥 Hi dear , Welcome', reply_markup=reply_markup)
-
