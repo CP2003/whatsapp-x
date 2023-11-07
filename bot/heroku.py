@@ -2,17 +2,31 @@ import os
 from telegram import Update
 from telegram.ext import ContextTypes, CommandHandler
 import heroku3
-ADMIN_USER_ID = os.environ.get('ADMIN_USER_ID')
+from Database.data import *
+
+
 HEROKU_API_KEY = os.environ.get('HEROKU_API_KEY')
 HEROKU_APP_NAME = os.environ.get('HEROKU_APP_NAME')
 
-def mono_effect(key, value):
-    return f"`⭕️ {key} : {value}`"
+
+# Define a function to restart your Heroku app
+def restart_bot(update, context):
+    user_id = str(update.message.from_user.id)
+    if user_id != ADMIN_ID:
+        await update.message.reply_text("You are not authorized to use this command.")
+        return
+    try:
+        app = heroku_conn.app('YOUR_APP_NAME')  # Replace 'YOUR_APP_NAME' with your Heroku app name
+        dyno = app.dynos()[0]
+        dyno.restart()
+        update.message.reply_text("Bot is restarting...")
+    except Exception as e:
+        update.message.reply_text(f"Failed to restart the bot: {e}")
 
 async def send_all_vars_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     # Check if the user is an admin
     user_id = str(update.message.from_user.id)
-    if user_id != ADMIN_USER_ID:
+    if user_id != ADMIN_ID:
         await update.message.reply_text("You are not authorized to use this command.")
         return
 
